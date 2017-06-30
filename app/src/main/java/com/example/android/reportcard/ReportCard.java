@@ -80,6 +80,7 @@ public class ReportCard {
     * All actual values - like a real student name, name of the subjects studied, etc. -
     * will be added using setter methods.
     * */
+
     public ReportCard() {
 
         mStudentName = "Default Name";
@@ -106,10 +107,33 @@ public class ReportCard {
     }
 
     /*
-    This method sets the student name for a ReportCard object.
+    Constructor for creating a new ReportCard object with input variables.
      */
-    public void setStudentName(String name) {
-        mStudentName = name;
+    public ReportCard(String studentName, int schoolYear, int gradingPeriodNumber, int noOfSubjects,
+                      String[] nameOfSubjects, double[] grades, int presence, int absence,
+                      int tardiness) {
+
+        mStudentName = studentName;
+        mGradingPeriod = gradingPeriodNumber;
+        mSchoolYear = schoolYear;
+
+        mSubjectNo = noOfSubjects;
+        mSubjectName = new String[mSubjectNo];
+        mSubjectGrade = new double[mSubjectNo];
+
+        /*
+        Defining a for loop in order to initialize the two arrays for the name of subjects studied
+        and the corresponding grade. Local variable i is used to keep count of the position in the
+        array.
+         */
+        for (int i = 0; i < mSubjectNo; i++) {
+            mSubjectName[i] = nameOfSubjects[i];
+            mSubjectGrade[i] = grades[i];
+        }
+
+        mPresent = presence;
+        mAbsent = absence;
+        mTardy = tardiness;
     }
 
     /*
@@ -117,6 +141,13 @@ public class ReportCard {
      */
     public String getStudentName (){
         return mStudentName;
+    }
+
+    /*
+    This method sets the student name for a ReportCard object.
+     */
+    public void setStudentName(String name) {
+        mStudentName = name;
     }
 
     /*
@@ -370,17 +401,17 @@ public class ReportCard {
     }
 
     /*
-   This method sets the number of times the student was late for class in a given grading period.
-    */
-    public void setTardy(int noOfTardy) {
-        mTardy = noOfTardy;
-    }
-
-    /*
     This method returns the number of times the student was late for class in a given grading period.
      */
     public int getTardy (){
         return mTardy;
+    }
+
+    /*
+   This method sets the number of times the student was late for class in a given grading period.
+    */
+    public void setTardy(int noOfTardy) {
+        mTardy = noOfTardy;
     }
 
     /*

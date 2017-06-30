@@ -33,5 +33,11 @@ public class MainActivity extends AppCompatActivity {
         String reportCardSummary = oneReportCard.toString();
         Log.v("MainActivity",reportCardSummary);
 
+        ReportCard andreeaIancuReportCard = new ReportCard("Andreea Iancu", 2017, 2, 7, new String[]{"Reading", "Written Communications",
+                "Science", "Mathematics", "Social Studies", "Art", "Music"},
+                new double[]{4, 5, 6, 10, 9, 4.50, 8}, 55, 3, 10);
+        String andreeaIancuReportCardSummary = andreeaIancuReportCard.toString();
+        Log.v("MainActivity", andreeaIancuReportCardSummary);
+
     }
 }
